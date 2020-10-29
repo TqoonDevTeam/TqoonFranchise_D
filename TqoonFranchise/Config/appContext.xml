@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<objects xmlns="http://www.springframework.net" xmlns:db="http://www.springframework.net/database" xmlns:tx="http://www.springframework.net/tx">
+
+  <db:provider id="ModelDbProvider" provider="System.Data.SqlClient" connectionString=""/>
+  <db:provider id="TargetDbProvider" provider="System.Data.SqlClient" connectionString=""/>
+
+  <object id="ModelAdoTemplate" type="Spring.Data.Generic.AdoTemplate, Spring.Data">
+    <property name="DbProvider" ref="ModelDbProvider"/>
+    <property name="DataReaderWrapperType" value="Spring.Data.Support.NullMappingDataReader, Spring.Data"/>
+    <property name="CommandTimeout" value="60" />
+  </object>
+
+  <object id="TargetAdoTemplate" type="Spring.Data.Generic.AdoTemplate, Spring.Data">
+    <property name="DbProvider" ref="TargetDbProvider"/>
+    <property name="DataReaderWrapperType" value="Spring.Data.Support.NullMappingDataReader, Spring.Data"/>
+    <property name="CommandTimeout" value="60" />
+  </object>
+
+  <object id="ModelTransactionManager" type="Spring.Data.Core.AdoPlatformTransactionManager, Spring.Data">
+    <property name="DbProvider" ref="ModelDbProvider" />
+  </object>
+
+  <object id="TargetTransactionManager" type="Spring.Data.Core.AdoPlatformTransactionManager, Spring.Data">
+    <property name="DbProvider" ref="TargetDbProvider" />
+  </object>
+  
+  <object id="TCod" type="JangBoGo.Info.Object.CommonObjectDao ,JangBoGo">
+    <property name="AdoTemplate" ref="TargetAdoTemplate"></property>
+  </object>
+  <object id="MCod" type="JangBoGo.Info.Object.CommonObjectDao ,JangBoGo">
+    <property name="AdoTemplate" ref="ModelAdoTemplate"></property>
+  </object>
+  <tx:attribute-driven />
+</objects>
