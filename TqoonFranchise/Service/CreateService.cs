@@ -15,7 +15,7 @@ namespace TqoonFranchise.Service
         public  void DoIt(FranchiseParam param)
         {
             DataDuplicator dataDuplicator = new DataDuplicator() { Param= param };
-            dataDuplicator.DoIt();
+            dataDuplicator.DoIt(param.ModelJoinerId,param.TargetJoinerId);
 
             FileDuplicator fileDuplicator = new FileDuplicator() { Param = param };
             fileDuplicator.DoIt();

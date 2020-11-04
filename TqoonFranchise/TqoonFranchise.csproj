@@ -72,12 +72,34 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\CopyItem.cs" />
     <Compile Include="Model\FranchiseParam.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\Data\AfterMakeCalcDataDuplicator.cs" />
+    <Compile Include="Service\Data\AfterMakeCalcInfoDuplicator.cs" />
+    <Compile Include="Service\Data\AfterMakeDuplicator.cs" />
     <Compile Include="Service\CreateService.cs" />
     <Compile Include="Service\DataDuplicator.cs" />
+    <Compile Include="Service\Data\AbstractDataDuplicator.cs" />
+    <Compile Include="Service\Data\AfterMakePriceDuplicator.cs" />
+    <Compile Include="Service\Data\CalcInfoDuplicator.cs" />
+    <Compile Include="Service\Data\CategoryDuplicator.cs" />
+    <Compile Include="Service\Data\DeliveryWeekDateItem.cs" />
+    <Compile Include="Service\Data\GoodsDuplicator.cs" />
+    <Compile Include="Service\Data\CalcDataDuplicator.cs" />
+    <Compile Include="Service\Data\DeliveryDateDuplicator.cs" />
+    <Compile Include="Service\Data\DeliveryWeekDuplicator.cs" />
+    <Compile Include="Service\Data\GoodsOptionInfoDuplicator.cs" />
+    <Compile Include="Service\Data\GoodsTypeDuplicator.cs" />
+    <Compile Include="Service\Data\PartnerCodeDuplicator.cs" />
+    <Compile Include="Service\Data\PartnerCodeTypeDuplicator.cs" />
+    <Compile Include="Service\Data\PartnerGoodsDuplicator.cs" />
+    <Compile Include="Service\Data\PartnerGoodsPriceDuplicator.cs" />
+    <Compile Include="Service\Data\PartnerPageContentsDuplicator.cs" />
     <Compile Include="Service\FileDuplicator.cs" />
+    <Compile Include="Service\Data\GoodsPriceDuplicator.cs" />
+    <Compile Include="Service\Data\GoodsOptionDuplicator.cs" />
     <Compile Include="Service\IDoIt.cs" />
   </ItemGroup>
   <ItemGroup>

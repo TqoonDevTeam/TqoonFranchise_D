@@ -1,1 +1,2 @@
 C:\DEV\TqoonFranchise\TqoonFranchise\bin\Debug\TqoonFranchise.exe.config
+C:\DEV\TqoonFranchise\TqoonFranchise\obj\Debug\TqoonFranchise.csprojResolveAssemblyReference.cache
