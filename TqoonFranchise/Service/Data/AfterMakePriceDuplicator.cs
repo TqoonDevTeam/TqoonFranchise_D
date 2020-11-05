@@ -1,4 +1,5 @@
-﻿using Adprint.AfterMakeCalcData.Model;
+﻿using Adprint.AfterMake.Model;
+using Adprint.AfterMakeCalcData.Model;
 using Adprint.AfterMakePrice.Model;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,8 @@ namespace TqoonFranchise.Service.Data
 {
     public class AfterMakePriceDuplicator
     {
-        public IList<CopyItem<AfterMakePriceItem>> DoIt(IList<CopyItem<AfterMakeCalcDataItem>> cAfterMakeCalcDataItems)
+        public IList<CopyItem<AfterMakePriceItem>> DoIt(IList<CopyItem<AfterMakeCalcDataItem>> relatedCCalcDataList,
+                                                        IList<CopyItem<AfterMakeItem>> relatedCAfterMakeList)
         {
             throw new NotImplementedException();
         }

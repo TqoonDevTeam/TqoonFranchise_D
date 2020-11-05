@@ -88,7 +88,7 @@ namespace TqoonFranchise.Service
             var CAfterMakeCalcDataItems = AfterMakeCalcDataDuplicator.DoIt(CAfterMakeCalcInfoItems);
 
             // AfterMakePrice
-            var CAfterMakePriceItems = AfterMakePriceDuplicator.DoIt(CAfterMakeCalcDataItems);
+            var CAfterMakePriceItems = AfterMakePriceDuplicator.DoIt(CAfterMakeCalcDataItems, CAfterMakeItems);
 
             // PartnerPageContents
             var CPartnerPageContentsItems = PartnerPageContentsDuplicator.DoIt(mJoinerId, tJoinerId);
