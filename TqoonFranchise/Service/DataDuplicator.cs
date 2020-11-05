@@ -48,27 +48,27 @@ namespace TqoonFranchise.Service
         public void DoIt(int mJoinerId, int tJoinerId)
         {
             // category            
-            var CCategoryItems =CategoryDuplicator.DoIt();
+            var CCategoryItems = CategoryDuplicator.DoIt(mJoinerId, tJoinerId);
             // DeliveryDate
-            var CDeliveryDateItems = DeliveryDateDuplicator.DoIt(CCategoryItems, mJoinerId,tJoinerId);
+            var CDeliveryDateItems = DeliveryDateDuplicator.DoIt(CCategoryItems, mJoinerId, tJoinerId);
             // DeliveryWeek
-            var CDeliveryWeekItems = DeliveryWeekDuplicator.DoIt( mJoinerId, tJoinerId);
+            var CDeliveryWeekItems = DeliveryWeekDuplicator.DoIt(mJoinerId, tJoinerId);
             // CalcInfo Bloc
-            var CCalcInfoItems = CalcInfoDuplicator.DoIt(mJoinerId,tJoinerId);
-            var CCalcDataItems = CalcDataDuplicator.DoIt(mJoinerId,tJoinerId,CCalcInfoItems);
+            var CCalcInfoItems = CalcInfoDuplicator.DoIt(mJoinerId, tJoinerId);
+            var CCalcDataItems = CalcDataDuplicator.DoIt(mJoinerId, tJoinerId, CCalcInfoItems);
             // PartnerCodeType
             var CPartnerCodeTypeItems = PartnerCodeTypeDuplicator.DoIt(mJoinerId, tJoinerId);
             // PartnerCode
             var CPartnerCodeItems = PartnerCodeDuplicator.DoIt(CPartnerCodeTypeItems);
             //PartnerGoods
-            var CPartnerGoodsItems = PartnerGoodsDuplicator.DoIt(mJoinerId,tJoinerId);
+            var CPartnerGoodsItems = PartnerGoodsDuplicator.DoIt(mJoinerId, tJoinerId);
             // PartnerGoodsPrice
             var CPartnerGoodsPriceItems = PartnerGoodsPriceDuplicator.DoIt(CPartnerGoodsItems);
 
             //Goods
-            var CGoodsItems = GoodsDuplicator.DoIt(CCategoryItems, 
-                                                    CDeliveryDateItems, 
-                                                    CCalcDataItems, CDeliveryWeekItems, CPartnerGoodsItems);           
+            var CGoodsItems = GoodsDuplicator.DoIt(CCategoryItems,
+                                                    CDeliveryDateItems,
+                                                    CCalcDataItems, CDeliveryWeekItems, CPartnerGoodsItems);
             // GoodsPrice           
             var CGoodsPriceItems = GoodsPriceDuplicator.DoIt(CGoodsItems, CPartnerGoodsPriceItems);
 
@@ -76,13 +76,13 @@ namespace TqoonFranchise.Service
             var CGoodsOptionItems = GoodsOptionDuplicator.DoIt(CPartnerGoodsItems);
 
             // GoodsOptionInfo
-            var CGoodsOptionInfoItems = GoodsOptionInfoDuplicator.DoIt(mJoinerId,tJoinerId);
+            var CGoodsOptionInfoItems = GoodsOptionInfoDuplicator.DoIt(mJoinerId, tJoinerId);
 
             // AfterMake
             var CAfterMakeItems = AfterMakeDuplicator.DoIt(CCategoryItems);
 
             // AfterMakeCalcInfo
-            var CAfterMakeCalcInfoItems = AfterMakeCalcInfoDuplicator.DoIt(mJoinerId,tJoinerId);
+            var CAfterMakeCalcInfoItems = AfterMakeCalcInfoDuplicator.DoIt(mJoinerId, tJoinerId);
 
             // AfterMakeCalcData
             var CAfterMakeCalcDataItems = AfterMakeCalcDataDuplicator.DoIt(CAfterMakeCalcInfoItems);
@@ -94,49 +94,6 @@ namespace TqoonFranchise.Service
             var CPartnerPageContentsItems = PartnerPageContentsDuplicator.DoIt(mJoinerId, tJoinerId);
 
         }
-    
-        private IList<CopyItem<AfterMakeItem>> CopyAfterMakeItems()
-        {
-            throw new NotImplementedException();
-        }
-
-        private IList<CopyItem<GoodsOptionItem>> CopyGoodsOptionItems()
-        {
-
-            throw new NotImplementedException();
-        }
-
-
-       
-
-        
-        private IList<CopyItem<DeliveryDateItem>> CopyDeliveryDate(IList<CopyItem<CategoryItem>> cCategoryItems)
-        {
-            //intCategoryNum,joinerId
-            IList<DeliveryDateItem> mItems = GetModelDeliveryItems();
-            IList<CopyItem<DeliveryDateItem>> copyItems = null;
-            foreach (var item in mItems)
-            {
-                var cItem = new CopyItem<DeliveryDateItem>();
-                var newItem = item.Clone();
-                newItem.Id = InsertItem(newItem);
-                cItem.Model = item;
-                cItem.Target = newItem;
-                copyItems.Add(cItem);
-            }
-            return copyItems;
-        }
-
-        private int InsertItem(DeliveryDateItem newItem)
-        {
-            throw new NotImplementedException();
-        }
-
-        private IList<DeliveryDateItem> GetModelDeliveryItems()
-        {
-            throw new NotImplementedException();
-        }
-
-        
+            
     }
 }

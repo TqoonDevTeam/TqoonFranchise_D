@@ -85,7 +85,6 @@
     <Compile Include="Service\Data\AfterMakePriceDuplicator.cs" />
     <Compile Include="Service\Data\CalcInfoDuplicator.cs" />
     <Compile Include="Service\Data\CategoryDuplicator.cs" />
-    <Compile Include="Service\Data\DeliveryWeekDateItem.cs" />
     <Compile Include="Service\Data\GoodsDuplicator.cs" />
     <Compile Include="Service\Data\CalcDataDuplicator.cs" />
     <Compile Include="Service\Data\DeliveryDateDuplicator.cs" />

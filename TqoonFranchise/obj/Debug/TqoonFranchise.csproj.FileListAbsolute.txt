@@ -67,3 +67,4 @@ C:\DEV\TqoonFranchise\TqoonFranchise\bin\Debug\Castle.Core.xml
 C:\DEV\TqoonFranchise\TqoonFranchise\obj\Debug\TqoonFranchise.csproj.TqoonFranchise.exe.config
 C:\DEV\TqoonFranchise\TqoonFranchise\obj\Debug\TqoonFranchise.exe
 C:\DEV\TqoonFranchise\TqoonFranchise\obj\Debug\TqoonFranchise.pdb
+C:\DEV\TqoonFranchise\TqoonFranchise\obj\Debug\TqoonFranchise.csprojResolveAssemblyReference.cache
