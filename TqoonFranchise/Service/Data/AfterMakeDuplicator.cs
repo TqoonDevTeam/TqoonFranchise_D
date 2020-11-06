@@ -17,9 +17,9 @@ namespace TqoonFranchise.Service.Data
             IList<AfterMakeItem> mList = GetMList(relatedMList);
 
             foreach (var mItem in mList)
-            {
-                var relatedCItem = relatedCList.Where(t => t.Model.Id == mItem.CategoryId).Single();
+            {                
                 var tItem = mItem.Clone<AfterMakeItem>();
+                var relatedCItem = relatedCList.Where(t => t.Model.Id == mItem.CategoryId).Single();
                 tItem.CategoryId = relatedCItem.Target.Id;
                 tItem.Id = TCod.Insert<AfterMakeItem>(tItem);
 

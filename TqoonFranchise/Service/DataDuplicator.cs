@@ -61,12 +61,13 @@ namespace TqoonFranchise.Service
             // PartnerCode
             var CPartnerCodeItems = PartnerCodeDuplicator.DoIt(CPartnerCodeTypeItems);
             //PartnerGoods
-            var CPartnerGoodsItems = PartnerGoodsDuplicator.DoIt(mJoinerId, tJoinerId);
+            var CPartnerGoodsItems = PartnerGoodsDuplicator.DoIt(mJoinerId, tJoinerId,CCalcDataItems);
             // PartnerGoodsPrice
             var CPartnerGoodsPriceItems = PartnerGoodsPriceDuplicator.DoIt(CPartnerGoodsItems);
 
             //Goods
-            var CGoodsItems = GoodsDuplicator.DoIt(CCategoryItems,
+            var CGoodsItems = GoodsDuplicator.DoIt(mJoinerId, tJoinerId, 
+                                                    CCategoryItems,
                                                     CDeliveryDateItems,
                                                     CCalcDataItems, CDeliveryWeekItems, CPartnerGoodsItems);
             // GoodsPrice           

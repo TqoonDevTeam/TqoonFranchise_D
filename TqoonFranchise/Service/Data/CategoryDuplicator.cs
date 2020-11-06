@@ -79,24 +79,7 @@ namespace TqoonFranchise.Service.Data
             }
         }
 
-        private JoinerItem GetTJoiner(int joinerId)
-        {
-            string query = "SELECT * FROM Joiner WHERE id=@joinerId";
-            return TCod.Query<JoinerItem>(new ItemQuery<JoinerItem>
-            {
-                Query = query,
-                DbParam = new { joinerId }
-            });
-        }
-        private JoinerItem GetMJoiner(int joinerId)
-        {
-            string query = "SELECT * FROM Joiner WHERE id=@joinerId";
-            return MCod.Query<JoinerItem>(new ItemQuery<JoinerItem>
-            {
-                Query = query,
-                DbParam = new { joinerId }
-            });
-        }
+        
         private IList<CategoryItem> GetMList(int joinerId)
         {
             string query = "SELECT * FROM tblCategory WHERE strState='REG' AND joinerId=@joinerId";
