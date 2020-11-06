@@ -23,7 +23,7 @@ namespace TqoonFranchise.Service.Data
                 var relatedCItem = relatedCList.Where(t => t.Model.Id == mItem.CalcInfoId).Single();
                 var tItem = mItem.Clone<CalcDataItem>();
                 tItem.CalcInfoId = relatedCItem.Target.Id;
-                //tItem.OwnerJoinerId = tJoinerId; //확인 요망
+                tItem.OwnedJoinerId = tJoinerId; 
                 tItem.Id = TCod.Insert<CalcDataItem>(tItem);
 
                 var cItem = new CopyItem<CalcDataItem>()
@@ -39,7 +39,7 @@ namespace TqoonFranchise.Service.Data
         {
             return MCod.Query<CalcDataItem>(new ListQuery<CalcDataItem>
             {
-                Query = $"SELECT * FROM CalcData WHERE ownerJoinerId = @joinerId and state='REG'",
+                Query = $"SELECT * FROM CalcData WHERE ownedJoinerId = @joinerId and state='REG'",
                 DbParam = new { joinerId }
             });
         }
