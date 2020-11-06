@@ -11,13 +11,16 @@
 *.userprefs
 
 # Build results
-[Dd]ebug/
+TqoonFranchise/[Dd]ebug/
+TqoonFranchise/[Bb]in/
+TqoonFranchise/[Oo]bj/
 [Dd]ebugPublic/
 [Rr]elease/
 [Rr]eleases/
 x64/
 x86/
 bld/
+[Dd]ebug/
 [Bb]in/
 [Oo]bj/
 
